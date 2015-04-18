@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">IceBreaker</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <color name="red">#ffff786b</color>
+    <color name="blue">#71c9f5</color>
+    <color name="white">#ffffffff</color>
+</resources>
