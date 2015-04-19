@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.InputStream;
@@ -20,12 +21,20 @@ public class FakeCall extends ActionBarActivity {
 
 
     AudioPlayer ap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fake_call);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+        RelativeLayout rl = (RelativeLayout)findViewById(R.id.endcall);
+        rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         ap = new AudioPlayer();
         ap.play(this);
         AudioManager audioManager =
